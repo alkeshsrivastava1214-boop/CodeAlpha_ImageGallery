@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1 class="title">📸 My Image Gallery</h1>
+
+  <!-- Filter Buttons -->
+  <div class="filter-buttons">
+  <button onclick="filterImages('all')">All</button>
+  <button onclick="filterImages('nature')">Nature</button>
+  <button onclick="filterImages('city')">City</button>
+  <button onclick="filterImages('animals')">Animals</button>
+  <button onclick="filterImages('car')">Cars</button>
+</div>
+
+  <!-- Gallery -->
+<div class="gallery">
+  <!-- Nature Images -->
+  <div class="image nature"><img src="Image Folder/Nature Images/Bed of Orange Flower.jpg" alt="Bed of Orange"></div>
+  <div class="image nature"><img src="Image Folder/Nature Images/Gray Concrete Bridge and Waterfalls during Daytime.jpg" alt="Gray Concrete Bridge and Waterfalls during Daytime"></div>
+  <div class="image nature"><img src="Image Folder/Nature Images/Green Mountain Across Body of Water.jpg" alt="Green Mountain Across Body of Water"></div>
+  <div class="image nature"><img src="Image Folder/Nature Images/Hot Air Balloon Contest.jpg" alt="Hot Air Balloon Contest"></div>
+  <div class="image nature"><img src="Image Folder/Nature Images/Trees under Blue Sky and Stars during Nighttime photo.jpg" alt="Trees under Blue Sky and Stars during Nighttime photo"></div>
+
+  <!-- City Images -->
+  <div class="image city"><img src="Image Folder/City Images/Aerial Photography of Cityscape at night.jpg" alt="Aerial Photography of Cityscape at night"></div>
+  <div class="image city"><img src="Image Folder/City Images/City Nights.jpg" alt="City Nights"></div>
+  <div class="image city"><img src="Image Folder/City Images/Empire State Building New-York at Night.jpg" alt="Empire State Building New-York at Night"></div>
+  <div class="image city"><img src="Image Folder/City Images/Person Walking on Pedestrian Lane between Buildings.jpg" alt="Person Walking on Pedestrian Lane between Buildings"></div>
+  <div class="image city"><img src="Image Folder/City Images/Photo of Tram Beside Waiting Station during Nighttime.jpg" alt="Photo of Tram Beside Waiting Station during Nighttime"></div>
+
+  <!-- Animal Images -->
+  <div class="image animals"><img src="Image Folder/Animal Images/A Tabby Cat Sits with one Paw Raised.jpg" alt="A Tabby Cat Sits with one Paw Raised"></div>
+  <div class="image animals"><img src="Image Folder/Animal Images/Brown and Black Tiger Lying on Ground.jpg" alt="Brown and Black Tiger Lying on Ground"></div>
+  <div class="image animals"><img src="Image Folder/Animal Images/Brown Fox on Snow Field.jpg" alt="Brown Fox on Snow Field"></div>
+  <div class="image animals"><img src="Image Folder/Animal Images/Butterfly perching on orange flower.jpg" alt="Butterfly perching on orange flower"></div>
+  <div class="image animals"><img src="Image Folder/Animal Images/White Fox Sitting on Snow during Daytime.jpg" alt="White Fox Sitting on Snow during Daytime"></div>
+
+  <!-- Car Images -->
+  <div class="image car"><img src="Image Folder/Car Images/Black Porsche 911 Parked on Street during Daytime.jpg" alt="Black Porsche 911 Parked on Street during Daytime"></div>
+  <div class="image car"><img src="Image Folder/Car Images/Bugatti Sport Car .jpg" alt="Bugatti Sport Car "></div>
+  <div class="image car"><img src="Image Folder/Car Images/Ferrari 458 on Road.jpg" alt="Ferrari 458 on Road"></div>
+  <div class="image car"><img src="Image Folder/Car Images/Mercedes Benz Coupe on gray Asphalt Road.jpg" alt="Mercedes Benz Coupe on gray Asphalt Road"></div>
+  <div class="image car"><img src="Image Folder/Car Images/Parked Black BMW Coupe.jpg" alt="Parked Black BMW Coupe"></div>
+
+  <!-- Lightbox -->
+ <!-- Lightbox -->
+<!-- Lightbox -->
+<div class="lightbox">
+  <span class="close">&times;</span>
+  <span class="prev">&#10094;</span>
+  <div class="modal-content">
+    <img id="fullImage" src="" alt="">
+  </div>
+  <span class="next">&#10095;</span>
+</div>
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
