@@ -9,7 +9,7 @@ const filterButtons = document.querySelectorAll(".filter-btn");
 let activeImages = []; 
 let currentIndex = 0;
 
-// FILTER BUTTONS
+// Filter Buttons
 filterButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     document.querySelector(".filter-btn.active")?.classList.remove("active");
@@ -20,7 +20,6 @@ filterButtons.forEach((btn) => {
   });
 });
 
-// Default: show all
 document.querySelector(".filter-btn[data-category='all']").click();
 
 // Open lightbox on image click
@@ -87,7 +86,7 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// IMAGE FILTER FUNCTION
+// Image Filter Function
 function filterImages(category) {
   activeImages = [];
   allImageWrappers.forEach(imgWrapper => {
