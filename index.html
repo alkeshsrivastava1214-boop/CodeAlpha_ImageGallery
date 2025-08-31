@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1 class="title">My Image Gallery</h1>
+
+  <!-- Filter Buttons -->
+<div class="filter-buttons">
+  <button class="filter-btn active" data-category="all">All</button>
+  <button class="filter-btn" data-category="nature">Nature</button>
+  <button class="filter-btn" data-category="city">City</button>
+  <button class="filter-btn" data-category="animals">Animals</button>
+  <button class="filter-btn" data-category="car">Cars</button>
+</div>
+
+  <!-- Gallery -->
+<div class="gallery">
+
+  <!-- Nature Images -->
+  <div class="image nature"><img src="Image Folder/Nature Images/Bed of Orange Flower.jpg" alt="Bed of Orange" data-category="nature" loading="lazy"></div>
+
+  <div class="image nature"><img src="Image Folder/Nature Images/Gray Concrete Bridge and Waterfalls during Daytime.jpg" alt="Gray Concrete Bridge and Waterfalls during Daytime" data-category="nature" loading="lazy"></div>
+
+  <div class="image nature"><img src="Image Folder/Nature Images/Green Mountain Across Body of Water.jpg" alt="Green Mountain Across Body of Water" data-category="nature" loading="lazy"></div>
+
+  <div class="image nature"><img src="Image Folder/Nature Images/Hot Air Balloon Contest.jpg" alt="Hot Air Balloon Contest" data-category="nature" loading="lazy"></div>
+  
+  <div class="image nature"><img src="Image Folder/Nature Images/Trees under Blue Sky and Stars during Nighttime photo.jpg" alt="Trees under Blue Sky and Stars during Nighttime photo" data-category="nature" loading="lazy"></div>
+
+  <!-- City Images -->
+  <div class="image city"><img src="Image Folder/City Images/Aerial Photography of Cityscape at night.jpg" alt="Aerial Photography of Cityscape at night" data-category="city" loading="lazy"></div>
+
+  <div class="image city"><img src="Image Folder/City Images/City Nights.jpg" alt="City Nights" data-category="city" loading="lazy"></div>
+
+  <div class="image city"><img src="Image Folder/City Images/Empire State Building New-York at Night.jpg" alt="Empire State Building New-York at Night" data-category="city" loading="lazy"></div>
+
+  <div class="image city"><img src="Image Folder/City Images/Person Walking on Pedestrian Lane between Buildings.jpg" alt="Person Walking on Pedestrian Lane between Buildings" data-category="city" loading="lazy"></div>
+
+  <div class="image city"><img src="Image Folder/City Images/Photo of Tram Beside Waiting Station during Nighttime.jpg" alt="Photo of Tram Beside Waiting Station during Nighttime" data-category="city" loading="lazy"></div>
+
+  <!-- Animal Images -->
+  <div class="image animals"><img src="Image Folder/Animal Images/A Tabby Cat Sits with one Paw Raised.jpg" alt="A Tabby Cat Sits with one Paw Raised" data-category="animals" loading="lazy"></div>
+  
+  <div class="image animals"><img src="Image Folder/Animal Images/Brown and Black Tiger Lying on Ground.jpg" alt="Brown and Black Tiger Lying on Ground" data-category="animals" loading="lazy"></div>
+
+  <div class="image animals"><img src="Image Folder/Animal Images/Brown Fox on Snow Field.jpg" alt="Brown Fox on Snow Field" data-category="animals" loading="lazy"></div>
+
+  <div class="image animals"><img src="Image Folder/Animal Images/Butterfly perching on orange flower.jpg" alt="Butterfly perching on orange flower" data-category="animals" loading="lazy"></div>
+
+  <div class="image animals"><img src="Image Folder/Animal Images/White Fox Sitting on Snow during Daytime.jpg" alt="White Fox Sitting on Snow during Daytime" data-category="animals" loading="lazy"></div>
+
+  <!-- Car Images -->
+  <div class="image car"><img src="Image Folder/Car Images/Black Porsche 911 Parked on Street during Daytime.jpg" alt="Black Porsche 911 Parked on Street during Daytime" data-category="car" loading="lazy"></div>
+
+  <div class="image car"><img src="Image Folder/Car Images/Bugatti Sport Car .jpg" alt="Bugatti Sport Car " data-category="car" loading="lazy"></div>
+
+  <div class="image car"><img src="Image Folder/Car Images/Ferrari 458 on Road.jpg" alt="Ferrari 458 on Road" data-category="car" loading="lazy"></div>
+
+  <div class="image car"><img src="Image Folder/Car Images/Mercedes Benz Coupe on gray Asphalt Road.jpg" alt="Mercedes Benz Coupe on gray Asphalt Road" data-category="car" loading="lazy"></div>
+
+  <div class="image car"><img src="Image Folder/Car Images/Parked Black BMW Coupe.jpg" alt="Parked Black BMW Coupe" data-category="car" loading="lazy"></div>
+
+  <!-- Lightbox -->
+ <!-- Lightbox -->
+<!-- Lightbox -->
+<div class="lightbox">
+  <span class="close">&times;</span>
+  <span class="prev">&#10094;</span>
+  <div class="modal-content">
+    <img id="fullImage" src="" alt="">
+  </div>
+  <span class="next">&#10095;</span>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
