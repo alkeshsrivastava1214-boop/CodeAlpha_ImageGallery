@@ -1,4 +1,4 @@
-const images = document.querySelectorAll(".gallery img");
+const allImageWrappers = document.querySelectorAll(".image");
 const lightbox = document.querySelector(".lightbox");
 const lightboxImg = document.getElementById("fullImage");
 const closeBtn = document.querySelector(".close");
@@ -6,9 +6,8 @@ const prevBtn = document.querySelector(".prev");
 const nextBtn = document.querySelector(".next");
 const filterButtons = document.querySelectorAll(".filter-btn");
 
+let activeImages = []; 
 let currentIndex = 0;
-
-lightbox.style.display = "none";
 
 // FILTER BUTTONS
 filterButtons.forEach((btn) => {
@@ -17,7 +16,7 @@ filterButtons.forEach((btn) => {
     btn.classList.add("active");
 
     const category = btn.getAttribute("data-category");
-      filterImages(category);
+    filterImages(category);
   });
 });
 
@@ -25,19 +24,22 @@ filterButtons.forEach((btn) => {
 document.querySelector(".filter-btn[data-category='all']").click();
 
 // Open lightbox on image click
-images.forEach((imgWrapper, index) => {
-  const img = imgWrapper.querySelector("img");
-  img.addEventListener("click", () => {
-    currentIndex = index;
-    showImage(currentIndex);
-    lightbox.style.display = "flex";
+function attachImageClick() {
+  activeImages.forEach((imgWrapper, index) => {
+    const img = imgWrapper.querySelector("img");
+    img.onclick = () => {
+      currentIndex = index;
+      showImage(currentIndex);
+      lightbox.style.display = "flex";
+    };
   });
-});
+}
 
 // Show selected image
 function showImage(index) {
-  const img = images[index].querySelector("img");
-  lightboxImg.src = img.src;}
+  const img = activeImages[index].querySelector("img");
+  lightboxImg.src = img.src;
+}
 
 // Close lightbox
 closeBtn.addEventListener("click", () => {
@@ -45,16 +47,23 @@ closeBtn.addEventListener("click", () => {
 });
 
 // Prev image
-prevBtn.addEventListener("click", () => {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  showImage(currentIndex);
-});
+function prevImage() {
+  if (activeImages.length > 0) {
+    currentIndex = (currentIndex - 1 + activeImages.length) % activeImages.length;
+    showImage(currentIndex);
+  }
+}
 
 // Next image
-nextBtn.addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % images.length;
-  showImage(currentIndex);
-});
+function nextImage() {
+  if (activeImages.length > 0) {
+    currentIndex = (currentIndex + 1) % activeImages.length;
+    showImage(currentIndex);
+  }
+}
+
+prevBtn.addEventListener("click", prevImage);
+nextBtn.addEventListener("click", nextImage);
 
 // Close on background click
 lightbox.addEventListener("click", (e) => {
@@ -63,22 +72,34 @@ lightbox.addEventListener("click", (e) => {
   }
 });
 
-// Close on ESC key
+// Keyboard control (ESC, ArrowLeft, ArrowRight)
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    lightbox.style.display = "none";
+  if (lightbox.style.display === "flex") {
+    if (e.key === "Escape") {
+      lightbox.style.display = "none";
+    }
+    if (e.key === "ArrowLeft") {
+      prevImage();
+    }
+    if (e.key === "ArrowRight") {
+      nextImage();
+    }
   }
 });
 
-//IMAGE FILTER FUNCTION
+// IMAGE FILTER FUNCTION
 function filterImages(category) {
-  images.forEach(imgWrapper => {
+  activeImages = [];
+  allImageWrappers.forEach(imgWrapper => {
     if (category === "all" || imgWrapper.classList.contains(category)) {
       imgWrapper.classList.add("show");
       imgWrapper.classList.remove("hide");
+      activeImages.push(imgWrapper);
     } else {
       imgWrapper.classList.remove("show");
       imgWrapper.classList.add("hide");
     }
   });
+
+  attachImageClick();
 }
