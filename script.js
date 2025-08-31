@@ -10,26 +10,23 @@ let currentIndex = 0;
 
 lightbox.style.display = "none";
 
+// FILTER BUTTONS
 filterButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     document.querySelector(".filter-btn.active")?.classList.remove("active");
     btn.classList.add("active");
 
     const category = btn.getAttribute("data-category");
-
-    images.forEach((img) => {
-      img.style.display = "none";
-      if (category === "all" || img.getAttribute("data-category") === category) {
-        img.style.display = "inline-block";
-      }
-    });
+      filterImages(category);
   });
 });
 
+// Default: show all
 document.querySelector(".filter-btn[data-category='all']").click();
 
 // Open lightbox on image click
-images.forEach((img, index) => {
+images.forEach((imgWrapper, index) => {
+  const img = imgWrapper.querySelector("img");
   img.addEventListener("click", () => {
     currentIndex = index;
     showImage(currentIndex);
@@ -39,8 +36,8 @@ images.forEach((img, index) => {
 
 // Show selected image
 function showImage(index) {
-  lightboxImg.src = images[index].src;
-}
+  const img = images[index].querySelector("img");
+  lightboxImg.src = img.src;}
 
 // Close lightbox
 closeBtn.addEventListener("click", () => {
@@ -75,13 +72,13 @@ document.addEventListener("keydown", (e) => {
 
 //IMAGE FILTER FUNCTION
 function filterImages(category) {
-  const images = document.querySelectorAll(".gallery .image");
-
-  images.forEach(img => {
-    if (category === "all" || img.classList.contains(category)) {
-      img.classList.remove("hide");  
+  images.forEach(imgWrapper => {
+    if (category === "all" || imgWrapper.classList.contains(category)) {
+      imgWrapper.classList.add("show");
+      imgWrapper.classList.remove("hide");
     } else {
-      img.classList.add("hide");      
+      imgWrapper.classList.remove("show");
+      imgWrapper.classList.add("hide");
     }
   });
 }
