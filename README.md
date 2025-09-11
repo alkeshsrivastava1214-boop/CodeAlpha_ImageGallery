@@ -17,7 +17,7 @@ The gallery includes categories such as Cars, Animals, and City with features li
 - ⚡ JavaScript  
 
 ## 🚀 Live Demo  
-👉[https://alkeshsrivastava1214-boop.github.io/CodeAlpha_ImageGallery/]  
+👉[https://alkeshsrivastava1214-boop.github.io/CodeAlpha_Task1_ImageGallery/]
 
 ## 🛠️ Getting Started  
 
